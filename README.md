@@ -86,30 +86,6 @@ FontAwesome – icons
 
 Google Fonts – typography
 
-📁 Project Structure
-project/
-│── index.html
-│── product.html
-│── cart.html
-│── about.html
-│── contact.html
-│
-├── styles/
-│   ├── style.css
-│   └── responsive.css
-│
-├── script/
-│   ├── app.js
-│   ├── cart.js
-│   └── data.js
-│
-└── assets/
-    ├── images/
-    └── icons/
-
-
-(Modify based on your actual project.)
-
 🚀 How to Run the Project
 Option 1: Open Directly
 
