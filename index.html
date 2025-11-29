@@ -214,6 +214,13 @@
       <i class="fas fa-filter"></i> Xóa bộ lọc
     </button>
 
+    <select class="form-select custom-select-filter" id="filter-type" onchange="filterProducts()">
+      <option value="all" selected>Loại sản phẩm</option>
+      <option value="Bàn phím">Bàn phím</option>
+      <option value="Chuột">Chuột</option>
+      <option value="Combo">Combo</option>
+    </select>
+    
     <select class="form-select custom-select-filter" id="filter-price" onchange="filterProducts()">
       <option value="all" selected>Giá (Tất cả)</option>
       <option value="under-1">Dưới 1 triệu</option>
@@ -237,6 +244,7 @@
       <option value="Targus">Targus</option>
       <option value="FL-Esports">FL-Esports</option>
       <option value="Philips">Philips</option>
+
     </select>
 
     <select class="form-select custom-select-filter" id="filter-connection" onchange="filterProducts()">
@@ -361,14 +369,10 @@
         </div>
       </div>
     </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script/layout.js"></script>
-    <script src="script/index.js"></script>
     <script src="script/auth_check.js"></script>
+    <script src="script/data.js"></script> 
+    <script src="script/index.js"></script> 
   </body>
 </html>

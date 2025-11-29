@@ -313,11 +313,65 @@ ul {
 }
 
 /* ==================== 7. PRODUCT GRID & CARD ==================== */
+/* ==================== PRODUCT GRID (CĂN GIỮA & HỞ 2 BÊN) ==================== */
+
 .custom-product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(5, 1fr); /* 5 cột */
+  gap: 25px; /* Tăng khoảng cách giữa các ô lên 25px cho thoáng */
+  
+  /* --- [QUAN TRỌNG] ĐOẠN NÀY GIÚP HỞ 2 BÊN --- */
+  width: 100%;
+  max-width: 1200px; /* Giới hạn chiều rộng, không cho giãn hết cỡ */
+  margin-left: auto; /* Tự động đẩy lề trái */
+  margin-right: auto; /* Tự động đẩy lề phải -> Kết quả là nằm giữa */
+  
   margin-bottom: 5rem;
+  padding: 0 10px; /* Đệm thêm 1 chút để không bị sát lề khi co nhỏ */
+}
+
+/* Thẻ sản phẩm */
+.product-card-custom {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.product-card-custom:hover {
+  border-color: #db4444;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE (GIỮ NGUYÊN) --- */
+@media (max-width: 1200px) {
+  .custom-product-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100%; /* Trên màn nhỏ thì cho full width để tận dụng diện tích */
+  }
+}
+
+@media (max-width: 992px) {
+  .custom-product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .product-card-custom {
+    padding: 10px;
+  }
 }
 
 .product-card-custom {

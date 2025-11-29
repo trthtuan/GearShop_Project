@@ -1,55 +1,3 @@
-// ==================== 1. KHO DỮ LIỆU SẢN PHẨM ====================
-const allProducts = [
-    {
-        id: 1,
-        name: "Bàn phím SKYLOONG GK104 PRO Twilight Tri-mode",
-        price: 2490000,
-        rating: 4.5,
-        reviews: 10,
-        stock: true,
-        description: "Bàn phím cơ SKYLOONG GK104 PRO với 3 chế độ kết nối, màn hình LED tùy chỉnh, switch Glacier độc quyền. Keycap PBT chất lượng cao.",
-        colors: ["#333", "#555"],
-        sizes: ["Fullsize"],
-        images: ["img/products/EDrakhôngdâyEK375ProBetaRedSwitch(1).png", "img/products/EDrakhôngdâyEK375ProBetaRedSwitch(1).png"]
-    },
-    {
-        id: 2,
-        name: "Bàn phím AULA F99 PRO TM (Có núm xoay/ Xanh dương)",
-        price: 1490000,
-        oldPrice: 1829000,
-        rating: 4.8,
-        reviews: 25,
-        stock: true,
-        description: "AULA F99 Pro là phiên bản nâng cấp với mạch xuôi, gasket mount êm ái, pin trâu 8000mAh. Màu xanh dương mát mắt.",
-        colors: ["#87CEEB", "#ffffff"],
-        sizes: ["99 phím"],
-        images: ["./img/products/aula-f99.png", "./img/products/keyboard2.png"]
-    },
-    {
-        id: 3,
-        name: "Bàn phím AKKO 5075B Plus Red World Tour VIET NAM",
-        price: 1790000,
-        rating: 5.0,
-        reviews: 3,
-        stock: true,
-        description: "Phiên bản đặc biệt tôn vinh văn hóa Việt Nam với họa tiết trống đồng, màu cờ sắc áo. Led RGB rực rỡ.",
-        colors: ["#db4444", "#ffff00"],
-        sizes: ["75%"],
-        images: ["img/products/AULAF81TM(Đen_IceSoulswitch)F8105.png", "img/products/AULAF81TM(Đen_IceSoulswitch)F8105.png"]
-    },
-    {
-        id: 101, 
-        name: "Tay cầm chơi game Havic HV G-92",
-        price: 550000,
-        rating: 4.5,
-        reviews: 150,
-        stock: true,
-        description: "Tay cầm chơi game Havic HV G-92 thiết kế công thái học...",
-        colors: ["#db4444", "#333"],
-        sizes: ["Standard"],
-        images: ["img/products/AULAF99PROTM(Cónúmxoay_Xanhdương+Trắng+Tím_GreyWoodV3Switch)F9915.png", "img/products/AULAF99PROTM(Cónúmxoay_Xanhdương+Trắng+Tím_GreyWoodV3Switch)F9915.png"]
-    }
-];
 
 // --- QUAN TRỌNG: Khai báo biến toàn cục ở đây ---
 let currentProduct = null;
@@ -66,8 +14,8 @@ function getProductFromUrl() {
     const urlParams = new URLSearchParams(queryString);
     const productId = urlParams.get('id'); 
     
-    // Tìm sản phẩm trong mảng allProducts
-    return allProducts.find(p => p.id == productId);
+    // Tìm trong dbProducts (biến toàn cục từ data.js)
+    return dbProducts.find(p => p.id == productId);
 }
 
 // ==================== 3. HÀM RENDER CHI TIẾT ====================
