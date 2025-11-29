@@ -1,0 +1,554 @@
+/* ==================== 1. VARIABLES & RESET ==================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --font-main: "Inter", "sans-serif";
+  --color-primary: #db4444;
+  --color-dark: #000000;
+  --color-gray: #7d8184;
+  --color-secondry-white: #f5f5f5;
+  --color-white: #ffffff;
+  --color-green: #00d565;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px; /* Base 1rem = 10px */
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+}
+
+.section-title {
+  margin-right: 2rem;
+  font-size: 3rem;
+}
+
+/* ==================== 2. NAVBAR ==================== */
+.nav {
+  width: 100%;
+  border-bottom: 1px solid var(--color-gray);
+}
+
+.nav-logo {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-dark);
+}
+
+.nav-list .nav-item {
+  margin: 0 1rem;
+}
+
+.nav-link {
+  font-size: 1.8rem;
+  padding: 1rem;
+  color: var(--color-dark);
+  transition: 0.5s;
+  border-bottom: transparent solid 2px;
+}
+
+.nav-link:hover {
+  border-color: var(--color-dark);
+}
+
+.nav-form {
+  background-color: var(--color-secondry-white);
+}
+
+.nav-input {
+  font-size: 1.8rem;
+  padding: 0.6rem;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.nav-search {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.nav-search:hover {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.nav-heart,
+.nav-cart {
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.8rem;
+  transition: 0.5s;
+  border-radius: 10%;
+}
+
+.actived:hover {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+/* ==================== 3. HEADER & CAROUSEL ==================== */
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+  gap: 2rem;
+}
+
+.header-filter {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-link {
+  color: var(--color-dark);
+  margin-bottom: 1.3rem;
+  font-size: 1.6rem;
+}
+
+.carousel {
+  width: 75%; /* Adjusted to fit alongside filter */
+}
+
+/* ==================== 4. BRAND GRID ==================== */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.brand-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: var(--color-white);
+  transition: all 0.3s ease;
+}
+
+.brand-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+}
+
+.brand-item:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.brand-item:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* ==================== 5. PRODUCT CATEGORY TYPES ==================== */
+.product-type-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.type-card {
+  flex: 1;
+  min-width: 150px;
+  background-color: var(--color-secondry-white);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: var(--color-dark);
+}
+
+.type-img-wrapper {
+  width: 100px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.type-img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.type-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.type-card:hover {
+  transform: translateY(-5px);
+  background-color: #e0e0e0;
+}
+
+/* ==================== 6. ADVANCED FILTERS ==================== */
+.advanced-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex: 1;
+}
+
+.btn-filter-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-filter-icon:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.custom-select-filter {
+  width: auto !important;
+  display: inline-block;
+  padding: 6px 30px 6px 12px;
+  font-size: 1.4rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #333;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 10px 10px;
+  box-shadow: none !important; 
+}
+
+.custom-select-filter:hover { border-color: #999; }
+.custom-select-filter:focus { border-color: var(--color-primary); }
+
+.sort-area {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.sort-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 6px 12px;
+  background-color: #fff;
+  font-size: 1.4rem;
+}
+
+.sort-select {
+  width: auto !important;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none !important;
+}
+
+/* ==================== 7. PRODUCT GRID & CARD ==================== */
+.custom-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.product-card-custom {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #fff;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card-custom:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card-badge.hot-deal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.product-img-wrap {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  
+  /* [QUAN TRỌNG] Thêm dòng này để ảnh phóng to không bị tràn ra ngoài khung */
+  overflow: hidden; 
+}
+
+.product-img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  
+  /* [QUAN TRỌNG] Bộ 3 dòng code chống giật lag */
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Chỉnh lại time cho mượt hơn */
+  will-change: transform; /* Báo trình duyệt ưu tiên render */
+  backface-visibility: hidden; /* Chống rung ảnh */
+}
+
+.product-card-custom:hover .product-img-wrap img {
+  transform: scale(1.1); /* Tăng lên 1.1 nhìn cho rõ hiệu ứng */
+}
+
+.product-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.8rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+  min-height: 4rem;
+}
+
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.product-tags .tag {
+  background-color: #f3f3f3;
+  color: #666;
+  font-size: 1.1rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.product-price-box { margin-top: auto; }
+
+.old-price {
+  font-size: 1.2rem;
+  color: #999;
+  text-decoration: line-through;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.new-price {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.discount-tag {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #ffad33;
+}
+
+.review-count {
+  color: #999;
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* ==================== 8. FOOTER ==================== */
+.footer {
+  margin-top: 10rem;
+  background-color: var(--color-dark);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 3rem;
+  padding: 5rem 0;
+  color: var(--color-white);
+  font-size: 1.8rem;
+}
+
+.footer-logo {
+  font-size: 5rem;
+  color: var(--color-white);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.footer-title {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.footer-list-item {
+  margin: 1rem 0;
+}
+
+.footer-copyright {
+  text-align: center;
+  color: var(--color-white);
+  padding: 1.5rem 0;
+}
+
+/* ==================== 9. RESPONSIVE ==================== */
+@media (max-width: 1042px) {
+  .header-container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-filter {
+    display: none !important;
+  }
+  .carousel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .advanced-filter-container {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .sort-area {
+      width: 100%;
+      justify-content: flex-start;
+  }
+  
+  .brand-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .product-type-grid {
+      flex-direction: row; 
+      overflow-x: auto;
+  }
+  
+  .nav-form {
+    width: 80%;
+  }
+  
+  .nav-link:hover {
+    margin-left: 1rem;
+  }
+  
+  .footer-container {
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+    font-size: 1.6rem;
+  }
+  .footer-logo { font-size: 3.5rem; }
+  .footer-title { font-size: 2.2rem; }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .footer-logo { font-size: 3rem; }
+  .footer-title { font-size: 2rem; }
+  .footer-list-item, .footer-p { font-size: 1.5rem; }
+}

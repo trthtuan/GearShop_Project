@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --font-main: "Inter", "sans-serif";
+  --color-primary: #db4444; /* Màu đỏ thương hiệu */
+  --color-dark: #000000;
+  --color-gray: #7d8184;
+  --color-white: #ffffff;
+}
+
+/* ==================== LOGIN CENTER LAYOUT ==================== */
+
+.sign-container {
+    width: 100%;
+    min-height: 70vh; /* Chiều cao vùng đăng nhập */
+    display: flex;
+    align-items: center;     /* Căn giữa dọc */
+    justify-content: center; /* Căn giữa ngang */
+    padding: 2rem 0;
+}
+
+.sign-content {
+    width: 100%;
+    max-width: 450px; /* Giới hạn chiều rộng form (quan trọng) */
+    background-color: var(--color-white);
+    padding: 4rem;
+    border-radius: 8px; /* Bo góc nhẹ */
+    /* Thêm đổ bóng để form nổi bật trên nền trắng */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #eee;
+}
+
+/* ==================== FORM STYLES ==================== */
+
+.form-title {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.sign-p {
+    margin-bottom: 3rem;
+    font-size: 1.5rem;
+    color: var(--color-gray);
+    text-align: center;
+}
+
+.form-content {
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color-gray);
+    font-size: 1.6rem;
+    transition: 0.3s;
+}
+
+.form-input:focus {
+    border-color: var(--color-primary);
+}
+
+.form-pass {
+    margin-bottom: 3rem;
+}
+
+.form-btn {
+    width: 100%;
+    padding: 1.4rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-btn:hover {
+    background-color: #c93434;
+}
+
+.form-sign-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.form-sign-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive cho mobile */
+@media only screen and (max-width: 576px) {
+    .sign-content {
+        padding: 3rem 2rem;
+        box-shadow: none; /* Mobile thì bỏ bóng cho gọn */
+        border: none;
+    }
+}

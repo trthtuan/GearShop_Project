@@ -1,0 +1,225 @@
+/* ==================== CHECKOUT STYLES ==================== */
+
+.checkout-section {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.checkout-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--color-dark, #000);
+}
+
+/* Custom Form Input */
+.custom-input {
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.custom-input:focus {
+    border-color: var(--color-primary, #db4444);
+    box-shadow: none;
+}
+
+.form-label {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+/* Order Summary Box (Cột bên phải) */
+.order-summary-box {
+    background-color: #f9f9f9;
+    padding: 3rem;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+/* Danh sách sản phẩm rút gọn */
+.checkout-items-list {
+    margin-bottom: 2rem;
+    max-height: 300px;
+    overflow-y: auto; /* Nếu danh sách dài quá thì cuộn */
+}
+
+.checkout-item-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.checkout-item-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-right: 1.5rem;
+}
+
+.checkout-item-info {
+    flex: 1;
+}
+
+.checkout-item-name {
+    display: block;
+    font-weight: 500;
+    /* Cắt bớt tên nếu quá dài */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+/* Tổng tiền */
+.total-row {
+    font-size: 1.8rem;
+}
+
+/* Nút đặt hàng */
+.btn-checkout {
+    background-color: var(--color-primary, #db4444);
+    color: #fff;
+    border: none;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.3s;
+    margin-top: 2rem;
+}
+
+.btn-checkout:hover {
+    background-color: #c93434;
+}
+
+/* Checkbox thanh toán */
+.form-check-input:checked {
+    background-color: var(--color-primary, #db4444);
+    border-color: var(--color-primary, #db4444);
+}
+
+.form-check-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* ==================== BANK INFO STYLING ==================== */
+
+/* Container tổng, thêm chút margin để tách biệt nút radio */
+.bank-info-container {
+    margin-top: 1.5rem;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Khung thẻ mô phỏng Card */
+.bank-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 100%;
+}
+
+/* Header (Tên ngân hàng) */
+.bank-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.bank-name {
+    font-weight: 700;
+    color: var(--color-primary, #db4444); /* Màu đỏ thương hiệu */
+    font-size: 1.6rem;
+}
+
+.bank-branch {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+/* Ảnh QR Code */
+.qr-wrapper {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #eee;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+.qr-img {
+    width: 160px; /* Kích thước cố định vừa phải */
+    height: 160px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Thông tin chi tiết text */
+.account-details {
+    text-align: left; /* Text căn trái cho dễ đọc */
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 6px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-row .label {
+    color: #666;
+    font-weight: 500;
+}
+
+.detail-row .value {
+    font-weight: 600;
+    color: #333;
+    text-align: right;
+}
+
+/* Số tài khoản nổi bật */
+.highlight-text {
+    color: var(--color-primary, #db4444);
+    font-size: 1.8rem; /* To hơn bình thường */
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* Ghi chú nhỏ bên dưới */
+.bank-note {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #28a745; /* Màu xanh lá tạo cảm giác an toàn */
+    font-weight: 500;
+}
+
+/* Hiệu ứng hiện ra nhẹ nhàng */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

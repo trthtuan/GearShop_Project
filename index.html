@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trang chủ - ONEGEAR</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid container">
+        <a class="navbar-brand nav-logo" href="./index.html">ONEGEAR</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-list">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Trang chủ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Giới thiệu</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="./signup.html">Đăng ký</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html">Đăng nhập</a>
+            </li>
+          </ul>
+
+          <div class="d-flex align-items-center nav-items">
+            <form class="d-flex nav-form">
+              <input
+                class="form-control me-2 nav-input"
+                type="search"
+                placeholder="Tìm kiếm..."
+                aria-label="Search"
+              />
+              <button class="btn nav-search" type="submit">
+                <i class="fas fa-magnifying-glass"></i>
+              </button>
+            </form>
+
+            <a href="#" class="text-dark text-decoration-none">
+              <i class="fa-regular fa-heart ms-3 nav-heart"></i>
+            </a>
+
+            <a href="./cart.html" class="text-dark text-decoration-none">
+              <i class="fa fa-cart-shopping ms-3 nav-cart actived"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <header class="header">
+      <div class="container header-container">
+        <div class="header-filter">
+          <a href="" class="filter-link">Bàn phím cơ</a>
+          <a href="" class="filter-link">Chuột gaming</a>
+          <a href="" class="filter-link">Electronics</a>
+          <a href="" class="filter-link">Ghế công thái học</a>
+          <a href="" class="filter-link">Lót chuột & Phụ kiện</a>
+        </div>
+
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner" style="height: 100%">
+            <div class="carousel-item active" style="height: 100%">
+              <img
+                src="./img/banner/banner-gear-1.jpg"
+                class="d-block w-100"
+                alt="Banner 1"
+                style="height: 100%"
+                onerror="this.src='https://via.placeholder.com/800x400'"
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <section class="section">
+      <div class="container">
+        <div class="brand-grid mb-5">
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/Apple.jpg" alt="Apple"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/logitech.jpg" alt="Logitech"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/ASUS.jpg" alt="Asus"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/Dareu.jpg" alt="Dareu"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/Aula.jpg" alt="Aula"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/Rapoo.jpg" alt="Rapoo"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/AKKO.jpg" alt="Akko"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/Corsair.jpg" alt="Corsair"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/MSI.jpg" alt="MSI"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/Xiaomi.jpg" alt="Xiaomi"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/E-dra.jpg" alt="E-Dra"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/Targus.jpg" alt="Targus"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/FL-Esports.jpg" alt="FL-Esports"
+          /></a>
+          <a href="#" class="brand-item"
+            ><img src="./img/brands/Philips.jpg" alt="Philips"
+          /></a>
+        </div>
+
+        <div class="section-header mb-4">
+          <h3 class="section-title">Chọn loại sản phẩm</h3>
+        </div>
+
+        <div class="product-type-grid">
+          <a href="#" class="type-card">
+            <div class="type-img-wrapper">
+              <img src="./img/banner/mouse.png" alt="Chuột" />
+            </div>
+            <span class="type-name">Chuột</span>
+          </a>
+          <a href="#" class="type-card">
+            <div class="type-img-wrapper">
+              <img src="./img/banner/keyboard.png" alt="Bàn phím" />
+            </div>
+            <span class="type-name">Bàn phím</span>
+          </a>
+          <a href="#" class="type-card">
+            <div class="type-img-wrapper">
+              <img src="./img/banner/combo.png" alt="Combo Chuột + Phím" />
+            </div>
+            <span class="type-name">Combo Chuột + Bàn phím</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="section product-listing-section">
+      <div class="container">
+        <div class="advanced-filter-container mb-5">
+          <div class="filter-list">
+            <button class="btn-filter-icon">
+              <i class="fas fa-filter"></i> Bộ lọc
+            </button>
+
+            <!-- Thanh tìm kiếm -->
+            <select class="form-select custom-select-filter">
+              <option selected>Giá</option>
+              <option>Dưới 1 triệu</option>
+              <option>1 - 3 triệu</option>
+              <option>Trên 3 triệu</option>
+            </select>
+
+            <select class="form-select custom-select-filter">
+              <option selected>Hãng</option>
+              <option>Apple</option>
+              <option>Logitech</option>
+              <option>Asus</option>
+              <option>Dareu</option>
+              <option>Aula</option>
+              <option>Rapoo</option>
+              <option>AKKO</option>
+              <option>Corsair</option>
+              <option>MSI</option>
+              <option>Xiaomi</option>
+              <option>E-Dra</option>
+              <option>Targus</option>
+              <option>FL-Esports</option>
+              <option>Philips</option>
+            </select>
+
+            <select class="form-select custom-select-filter">
+              <option selected>Kết nối</option>
+              <option>Có dây</option>
+              <option>Không dây</option>
+            </select>
+
+            <select class="form-select custom-select-filter">
+              <option selected>Keycaps</option>
+              <option>ABS</option>
+              <option>ASA</option>
+              <option>FSA</option>
+              <option>PBT</option>
+              <option>TKL</option>
+            </select>
+
+            <select class="form-select custom-select-filter">
+              <option selected>Kích thước</option>
+              <option>Fullsize</option>
+              <option>Mini</option>
+              <option>TKL</option>
+            </select>
+
+            <select class="form-select custom-select-filter">
+              <option selected>LED</option>
+              <option>Có</option>
+              <option>Không</option>
+              <option>Rainbow</option>
+              <option>Trắng</option>
+              <option>Đơn sắc</option>
+            </select>
+
+            <select class="form-select custom-select-filter">
+              <option selected>Model</option>
+              <option>G900L</option>
+              <option>L500P</option>
+            </select>
+
+            <select class="form-select custom-select-filter">
+              <option selected>Layout</option>
+              <option>ANSI</option>
+              <option>ISO</option>
+            </select>
+
+            <select class="form-select custom-select-filter">
+              <option selected>Mục đích sử dụng</option>
+              <option>Gaming</option>
+              <option>Văn phòng</option>
+            </select>
+
+            <select class="form-select custom-select-filter">
+              <option selected>Chất liệu vỏ</option>
+              <option>Nhựa</option>
+            </select>
+
+            <select class="form-select custom-select-filter">
+              <option selected>Phương thức kết nối</option>
+              <option>USB Type-C; Bluetooth 5.0; Wireless 2.4GHz</option>
+            </select>
+          </div>
+          <!-- Hết thanh tìm kiếm -->
+
+          <!-- Sắp xếp theo -->
+          <div class="sort-area">
+            <div class="sort-box">
+              <i class=""></i>
+              <span class="me-2">Xếp theo:</span>
+              <select class="">
+                <option selected>Nổi bật</option>
+                <option>Giá tăng dần</option>
+                <option>Giá giảm dần</option>
+                <option>Mới nhất</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-product-grid" id="product-container"></div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-item">
+          <a href="#" class="footer-logo">ONEGEAR</a>
+          <div class="footer-p">
+            Chúng tôi chuyên cung cấp gaming gear chính hãng, giá tốt, bảo hành
+            minh bạch và hỗ trợ khách hàng nhanh chóng. Cam kết mang đến trải
+            nghiệm mua sắm uy tín và tận tâm nhất cho anh em game thủ.
+          </div>
+        </div>
+        <div class="footer-item">
+          <h3 class="footer-title">Hỗ trợ</h3>
+          <ul class="footer-list">
+            <li class="footer-list-item">Số 55 Giải Phóng, Hà Nội</li>
+            <li class="footer-list-item">tohocHUCE@gmail.com</li>
+            <li class="footer-list-item">+84969015828</li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <h3 class="footer-title">Tài khoản</h3>
+          <ul class="footer-list">
+            <li class="footer-list-item">Tài khoản của tôi</li>
+            <li class="footer-list-item">Đăng nhập / Đăng ký</li>
+            <li class="footer-list-item">Giỏ hàng</li>
+            <li class="footer-list-item">Danh sách yêu thích</li>
+            <li class="footer-list-item">Cửa hàng</li>
+          </ul>
+        </div>
+        <div class="footer-item">
+          <h3 class="footer-title">Liên kết nhanh</h3>
+          <ul class="footer-list">
+            <li class="footer-list-item">Chính sách bảo mật</li>
+            <li class="footer-list-item">Điều khoản sử dụng</li>
+            <li class="footer-list-item">Câu hỏi thường gặp</li>
+            <li class="footer-list-item">Liên hệ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-container">
+          <div class="footer-copyright">
+            &#169; Copyright 2025 ONEGEAR. All right reserved
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script/layout.js"></script>
+    <script src="script/index.js"></script>
+    <script src="script/auth_check.js"></script>
+  </body>
+</html>
