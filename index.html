@@ -55,22 +55,24 @@
             </li> -->
             <li class="nav-item"><a class="nav-link" href="./contact.html">Liên hệ</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="./signup.html">Đăng ký</a>
+              <a class="nav-link" href="./login.html">Đăng nhập</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./login.html">Đăng nhập</a>
+              <a class="nav-link" href="./signup.html">Đăng ký</a>
             </li>
           </ul>
 
           <div class="d-flex align-items-center nav-items">
-            <form class="d-flex nav-form">
+            <form class="d-flex nav-form" onsubmit="event.preventDefault(); filterProducts();">
               <input
+                id="search-input" 
                 class="form-control me-2 nav-input"
                 type="search"
-                placeholder="Tìm kiếm..."
+                placeholder="Tìm kiếm sản phẩm..."
                 aria-label="Search"
+                oninput="filterProducts()" 
               />
-              <button class="btn nav-search" type="submit">
+              <button class="btn nav-search" type="button" onclick="filterProducts()">
                 <i class="fas fa-magnifying-glass"></i>
               </button>
             </form>
