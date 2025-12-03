@@ -33,7 +33,7 @@ function updateUserInterface() {
                 Xin chào, ${currentUser.name}
             </a>
             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="./history.html">📦 Lịch sử mua hàng</a></li> <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#" onclick="logoutUser()">Đăng xuất</a></li>
             </ul>
         </li>

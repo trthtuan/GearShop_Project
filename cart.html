@@ -43,9 +43,9 @@
             <li class="nav-item">
               <a class="nav-link" href="./index.html">Trang chủ</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="#">Giới thiệu</a>
-            </li>
+            </li> -->
             <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
             <li class="nav-item">
               <a class="nav-link" href="./signup.html">Đăng ký</a>
@@ -132,14 +132,20 @@
 
         <div class="cart-actions mt-4">
           <a href="./index.html" class="btn-custom-outline">Tiếp tục mua sắm</a>
-          <button class="btn-custom-outline">Cập nhật giỏ hàng</button>
+          <!-- <button class="btn-custom-outline">Cập nhật giỏ hàng</button> -->
         </div>
 
         <div class="row mt-5 cart-bottom-section">
           <div class="col-md-6 mb-4">
             <div class="coupon-box">
-              <input type="text" placeholder="Nhập mã giảm giá" />
-              <button class="btn-custom">Áp dụng</button>
+              <input
+                type="text"
+                id="coupon-input"
+                placeholder="Nhập mã giảm giá (mssv@st.huce.edu.vn)"
+              />
+              <button class="btn-custom" onclick="applyCoupon()">
+                Áp dụng
+              </button>
             </div>
           </div>
 
@@ -148,16 +154,24 @@
               <h3 class="cart-total-title">Tổng cộng giỏ hàng</h3>
               <div class="cart-total-row">
                 <span>Tạm tính:</span>
-                <span>0₫</span>
+                <span id="sub-total-display">0₫</span>
               </div>
               <div class="cart-total-row">
                 <span>Phí vận chuyển:</span>
                 <span class="text-success">Miễn phí</span>
               </div>
+              <div
+                class="cart-total-row text-danger"
+                id="discount-row"
+                style="display: none"
+              >
+                <span>Giảm giá (SV HUCE):</span>
+                <span id="discount-amount">-0₫</span>
+              </div>
               <hr />
               <div class="cart-total-row total-final">
                 <span>Tổng thanh toán:</span>
-                <span>0₫</span>
+                <span id="final-total-display">0₫</span>
               </div>
               <button
                 class="btn-custom w-100 mt-3"
@@ -182,8 +196,10 @@
         <div class="footer-item">
           <h3 class="footer-title">Hỗ trợ</h3>
           <ul class="footer-list">
-            <li class="footer-list-item">Số 55 Giải Phóng, Hà Nội</li>
-            <li class="footer-list-item">tohocHUCE@gmail.com</li>
+            <li class="footer-list-item">
+              Số 55 Giải Phóng,Đồng Tâm, Đống Đa, Hà Nội
+            </li>
+            <li class="footer-list-item">cskh@onegear.vn</li>
             <li class="footer-list-item">+84969015828</li>
           </ul>
         </div>

@@ -1,203 +1,154 @@
-const products = dbProducts;
+// script/index.js
 
-// 2. HÀM ĐỊNH DẠNG TIỀN TỆ (Để hiển thị 2.000.000đ đẹp hơn)
+// 1. KIỂM TRA DỮ LIỆU
+if (typeof dbProducts === 'undefined') {
+    console.error("Lỗi: Không tìm thấy dbProducts. Hãy kiểm tra lại file data.js!");
+    alert("Lỗi dữ liệu sản phẩm! Vui lòng tải lại trang.");
+}
+
+// Biến chứa danh sách sản phẩm gốc
+const products = dbProducts || [];
+
+// 2. HÀM ĐỊNH DẠNG TIỀN TỆ
 function formatCurrency(amount) {
-  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
 }
 
-// 3. HÀM RENDER HTML
-function renderProducts() {
-  const container = document.getElementById('product-container');
-  if (!container) return;
-
-  let htmlContent = '';
-
-  products.forEach(product => {
-    let priceBoxHtml = '';
-    if (product.oldPrice) {
-      priceBoxHtml = `
-        <span class="old-price">${formatCurrency(product.oldPrice)}</span>
-        <div class="price-row">
-            <span class="new-price">${formatCurrency(product.price)}</span>
-            <span class="discount-tag">-${product.discount}%</span>
-        </div>
-      `;
-    } else {
-      priceBoxHtml = `
-        <div class="price-row" style="margin-top: auto">
-            <span class="new-price">${formatCurrency(product.price)}</span>
-        </div>
-      `;
-    }
-
-    // Nếu product.tags không có, thì dùng mảng rỗng [] để không bị lỗi
-const tagsHtml = (product.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('');
-    const hotBadge = product.isHot ? `<div class="card-badge hot-deal"><i class="fas fa-fire"></i> HOT DEAL</div>` : '';
-
-    htmlContent += `
-      <div class="product-card-custom">
-        ${hotBadge}
-        <div class="product-img-wrap">
-            <a href="product.html?id=${product.id}">
-                <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null;this.src='./img/products/keyboard1.png'">
-            </a>
-        </div>
-        <div class="product-info">
-            <h3 class="product-name">
-                <a href="product.html?id=${product.id}" style="color: inherit; text-decoration: none;">
-                    ${product.name}
-                </a>
-            </h3>
-            <div class="product-tags">
-                ${tagsHtml}
-            </div>
-            <div class="product-price-box">
-                ${priceBoxHtml}
-            </div>
-            
-            </div>
-      </div>
-    `;
-  });
-
-  container.innerHTML = htmlContent;
-}
-
-// ==================== LOGIC BỘ LỌC & SẮP XẾP ====================
-
-// 1. Hàm lọc chính (Chạy khi bạn thay đổi bất kỳ ô select nào)
-function filterProducts() {
-    // Lấy giá trị từ các ô input
-    const product_Type = document.getElementById('filter-type').value;
-    const priceType = document.getElementById('filter-price').value;
-    const brandType = document.getElementById('filter-brand').value;
-    const connType  = document.getElementById('filter-connection').value;
-    const ledType   = document.getElementById('filter-led').value;
-    const keycapType = document.getElementById('filter-keycap').value;
-    const sortType  = document.getElementById('sort-order').value;
-    const layoutType = document.getElementById('filter-layout').value
-    const purposeType = document.getElementById('filter-purpose').value
-    const sizeType = document.getElementById('filter-size').value
-    // Bắt đầu lọc
-    let filteredData = products.filter(item => {
-        // Mặc định là giữ lại (true), nếu vi phạm điều kiện nào thì loại bỏ (false)
-
-        // --- Lọc GIÁ ---
-        if (priceType === 'under-1' && item.price >= 1000000) return false;
-        if (priceType === '1-3' && (item.price < 1000000 || item.price > 3000000)) return false;
-        if (priceType === 'over-3' && item.price <= 3000000) return false;
-
-        // --- Lọc HÃNG (So sánh không phân biệt hoa thường) ---
-        if (brandType !== 'all' && item.brand.toLowerCase() !== brandType.toLowerCase()) return false;
-
-        // --- Lọc KẾT NỐI ---
-        if (connType !== 'all' && item.connection.toLowerCase() !== connType.toLowerCase()) return false;
-
-        // --- Lọc LED ---
-        if (ledType !== 'all' && item.led.toLowerCase() !== ledType.toLowerCase()) return false;
-
-        // --- Lọc KEYCAP ---
-        if (keycapType !== 'all' && item.keycap.toLowerCase() !== keycapType.toLowerCase()) return false;
-
-        //--- Lọc Size ---
-        if(sizeType !== 'all' && item.sizeType.toLowerCase() !== sizeType.toLowerCase()) return false;
-
-        //--- Lọc Layout ---
-        if(layoutType !== 'all' && item.layoutType.toLowerCase() !== layoutType.toLowerCase()) return false;
-
-        // ---Lọc Purpose ---
-        if(purposeType !== 'all' && item.purposeType.toLowerCase() !== purposeType.toLowerCase()) return false;
-
-        // ---Lọc Type ---
-        if(product_Type !== 'all' && item.type.toLowerCase() !== product_Type.toLowerCase()) return false;
-
-        return true; // Nếu qua được hết các cửa ải trên thì giữ lại
-    });
-
-    // Sau khi lọc xong thì SẮP XẾP
-    if (sortType === 'price-asc') {
-        filteredData.sort((a, b) => a.price - b.price);
-    } else if (sortType === 'price-desc') {
-        filteredData.sort((a, b) => b.price - a.price);
-    } else if (sortType === 'name-asc') {
-        filteredData.sort((a, b) => a.name.localeCompare(b.name));
-    }
-
-    // Vẽ lại giao diện
-    renderFilteredList(filteredData);
-}
-
-// 2. Hàm vẽ lại danh sách (Chỉ dùng cho bộ lọc)
+// 3. HÀM RENDER HTML (HIỂN THỊ SẢN PHẨM)
 function renderFilteredList(data) {
     const container = document.getElementById('product-container');
-    
+    if (!container) return;
+
     if (data.length === 0) {
         container.innerHTML = `
-            <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
-                <h3>😢 Không tìm thấy sản phẩm nào!</h3>
-                <p>Hãy thử bỏ bớt các tiêu chí lọc xem sao.</p>
+            <div style="grid-column: 1/-1; text-align: center; padding: 5rem;">
+                <h3 class="text-muted">😢 Không tìm thấy sản phẩm phù hợp!</h3>
+                <p>Vui lòng thử từ khóa hoặc bộ lọc khác.</p>
+                <button class="btn btn-outline-dark mt-3" onclick="resetFilters()">Xóa bộ lọc</button>
             </div>
         `;
         return;
     }
 
     let htmlContent = '';
-    
-    // Tái sử dụng logic vẽ HTML cũ
+
     data.forEach(product => {
-        let priceBoxHtml = `
-            <div class="price-row" style="margin-top: auto">
-                <span class="new-price">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}</span>
-            </div>
-        `;
-        
-        // Nếu có giá cũ
+        // Xử lý hiển thị giá
+        let priceBoxHtml = '';
         if (product.oldPrice) {
-             priceBoxHtml = `
-                <span class="old-price">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.oldPrice)}</span>
+            priceBoxHtml = `
+                <span class="old-price">${formatCurrency(product.oldPrice)}</span>
                 <div class="price-row">
-                    <span class="new-price">${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(product.price)}</span>
+                    <span class="new-price">${formatCurrency(product.price)}</span>
+                    <span class="discount-tag">-${product.discount}%</span>
                 </div>
-              `;
+            `;
+        } else {
+            priceBoxHtml = `
+                <div class="price-row" style="margin-top: auto">
+                    <span class="new-price">${formatCurrency(product.price)}</span>
+                </div>
+            `;
         }
 
-        const hotBadge = product.isHot ? `<div class="card-badge hot-deal"><i class="fas fa-fire"></i> HOT DEAL</div>` : '';
+        // Xử lý tags và nhãn hot
+        const tagsHtml = (product.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('');
+        const hotBadge = product.isHot ? `<div class="card-badge hot-deal"><i class="fas fa-fire"></i> HOT</div>` : '';
+
+        // Xử lý ảnh lỗi
+        const fallbackImg = './img/keyboard/keyboard1.jpg';
 
         htmlContent += `
-          <div class="product-card-custom">
-            ${hotBadge}
-            <div class="product-img-wrap">
-                <a href="product.html?id=${product.id}">
-                    <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null;this.src='./img/products/keyboard1.png'">
-                </a>
+            <div class="product-card-custom">
+                ${hotBadge}
+                <div class="product-img-wrap">
+                    <a href="product.html?id=${product.id}">
+                        <img src="${product.image}" alt="${product.name}" onerror="this.src='${fallbackImg}'">
+                    </a>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">
+                        <a href="product.html?id=${product.id}" style="color: inherit; text-decoration: none;">
+                            ${product.name}
+                        </a>
+                    </h3>
+                    <div class="product-tags mb-2">${tagsHtml}</div>
+                    <div class="product-price-box">${priceBoxHtml}</div>
+                </div>
             </div>
-            <div class="product-info">
-                <h3 class="product-name">
-                    <a href="product.html?id=${product.id}">${product.name}</a>
-                </h3>
-                <div class="product-price-box">${priceBoxHtml}</div>
-            </div>
-          </div>
         `;
     });
 
     container.innerHTML = htmlContent;
 }
 
-// 3. Hàm Reset (Xóa hết lọc)
+// 4. HÀM LỌC CHÍNH (LOGIC KẾT HỢP)
+function filterProducts() {
+    // Lấy giá trị từ các ô input
+    const priceType = document.getElementById('filter-price').value;
+    const brandType = document.getElementById('filter-brand').value;
+    const connType  = document.getElementById('filter-connection').value;
+    const ledType   = document.getElementById('filter-led').value;
+    const keycapType = document.getElementById('filter-keycap').value;
+    const sortType  = document.getElementById('sort-order').value;
+
+    // Bắt đầu lọc
+    let filteredData = products.filter(item => {
+        // Mặc định là giữ lại (true), nếu vi phạm điều kiện nào thì loại bỏ (false)
+        
+        // --- Lọc GIÁ ---
+        if (priceType === 'under-1' && item.price >= 1000000) return false;
+        if (priceType === '1-3' && (item.price < 1000000 || item.price > 3000000)) return false;
+        if (priceType === 'over-3' && item.price <= 3000000) return false;
+
+        // 4. Lọc theo HÃNG
+        if (brandVal !== 'all' && item.brand.toLowerCase() !== brandVal.toLowerCase()) return false;
+
+        // --- Lọc KẾT NỐI ---
+        if (connType !== 'all' && item.connection !== connType) return false;
+
+        // --- Lọc LED ---
+        if (ledType !== 'all' && item.led !== ledType) return false;
+
+        // --- Lọc KEYCAP ---
+        if (keycapType !== 'all' && item.keycap !== keycapType) return false;
+
+        return true; // Giữ lại sản phẩm thỏa mãn tất cả điều kiện
+    });
+
+    // d. Thực hiện Sắp xếp
+    if (sortVal === 'price-asc') {
+        filteredData.sort((a, b) => a.price - b.price);
+    } else if (sortVal === 'price-desc') {
+        filteredData.sort((a, b) => b.price - a.price);
+    } else if (sortVal === 'name-asc') {
+        filteredData.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    // e. Vẽ lại giao diện
+    renderFilteredList(filteredData);
+}
+
+// 5. HÀM RESET BỘ LỌC
 function resetFilters() {
-    document.getElementById('filter-price').value = 'all';
-    document.getElementById('filter-brand').value = 'all';
-    document.getElementById('filter-connection').value = 'all';
-    document.getElementById('filter-led').value = 'all';
-    document.getElementById('filter-keycap').value = 'all';
-    document.getElementById('sort-order').value = 'default';
+    // Reset các dropdown về 'all'
+    const selects = document.querySelectorAll('.custom-select-filter');
+    selects.forEach(select => select.value = 'all');
     
-    // Gọi lại hàm lọc để hiện tất cả
+    // Reset ô tìm kiếm
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) searchInput.value = '';
+
+    // Reset sắp xếp
+    const sortSelect = document.getElementById('sort-order');
+    if (sortSelect) sortSelect.value = 'default';
+
+    // Gọi lại hàm lọc
     filterProducts();
 }
 
-// 4. CHẠY HÀM KHI TRANG WEB TẢI XONG
+// 6. KHỞI CHẠY
 document.addEventListener('DOMContentLoaded', () => {
-  renderProducts();
+    // Render lần đầu (hiển thị tất cả)
+    renderFilteredList(products);
 });

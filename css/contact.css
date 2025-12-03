@@ -1,0 +1,88 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.header {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    text-align: center;
+}
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+.breadcrumb {
+    padding-left: 24px;
+    margin: 20px 10px;
+}
+.contact-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.contact-info, .contact-form {
+    flex: 1 1 300px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 -4px 20px lightgray;
+}
+.email-contact {
+    padding-top: 25px;
+}
+.phone-contact {
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+}
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+.contact-form form input, .contact-form form textarea {
+    padding: 5px;
+    margin: 10px 0;
+    border: 1px solid #EFF0F6;
+    background-color: #EFF0F6;
+    width: 100%;
+}
+.write {
+    display: flex;
+    flex-wrap: wrap;
+}
+.name, .email, .phone {
+    flex: 1 1 100%;
+    margin: 5px 10px;
+}
+.contact-form form button {
+    background-color: #DB4444;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    height: 50px;
+    width: auto;
+    margin: 10px auto;
+}
+
+/* Responsive adjustments for form */
+@media (max-width: 1140px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    .contact-info, .contact-form {
+        width: 100%;
+        margin: 5px 0;
+    }
+    textarea {
+        width: 100% !important;
+    }
+}

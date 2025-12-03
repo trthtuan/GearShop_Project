@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Đăng ký - ONEGEAR</title>
-
+    <title>Liên hệ - ONEGEAR</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,15 +21,14 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/signup.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid container">
-        <a class="navbar-brand nav-logo" href="./index.html">ONEGEAR</a>
+        <a class="navbar-brand nav-logo" href="index.html">ONEGEAR</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -48,9 +46,14 @@
               <a class="nav-link" href="./index.html">Trang chủ</a>
             </li>
             <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Giới thiệu</a>
+              <a class="nav-link" href="about.html">Giới thiệu</a>
             </li> -->
-            <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Liên hệ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html">Đăng nhập</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="./signup.html">Đăng ký</a>
             </li>
@@ -60,86 +63,112 @@
               <input
                 class="form-control me-2 nav-input"
                 type="search"
-                placeholder="Tìm kiếm sản phẩm..."
+                placeholder="Tìm kiếm..."
                 aria-label="Search"
               />
               <button class="btn nav-search" type="submit">
                 <i class="fas fa-magnifying-glass"></i>
               </button>
             </form>
-            <i class="fa-regular fa-heart ms-3 nav-heart"></i>
-            <i class="fa fa-cart-shopping ms-3 nav-cart"></i>
+            <a href="wishlist.html"
+              ><i class="fa-regular fa-heart ms-3 nav-heart actived"></i
+            ></a>
+            <a href="cart.html"
+              ><i class="fa fa-cart-shopping ms-3 nav-cart actived"></i
+            ></a>
           </div>
         </div>
       </div>
     </nav>
-    <section class="section">
-      <div class="sign-container container">
-        <div class="sign-content">
-          <form onsubmit="signup(event)" class="sign-form">
-            <div class="text-center mb-5">
-              <h2 class="form-title">Tạo tài khoản mới</h2>
-              <p class="sign-p">Nhập thông tin chi tiết bên dưới để đăng ký</p>
-            </div>
+    <ol class="breadcrumb container">
+      <li class="breadcrumb-item">
+        <a href="index.html" style="color: gray; text-decoration: none"
+          >Trang chủ</a
+        >
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Liên hệ</li>
+    </ol>
 
-            <div class="form-content">
+    <div class="contact-container container">
+      <div class="contact-info">
+        <div class="phone-contact">
+          <div class="call to us" style="display: flex; margin-bottom: 20px">
+            <img src="./img/contact.png" style="height: 40px; width: 40px" />
+            <h2 style="margin-top: 10px; margin-left: 11px">
+              Gọi cho chúng tôi
+            </h2>
+          </div>
+          <p>Chúng tôi trực tuyến 24/7, tất cả các ngày trong tuần.</p>
+          <p><strong>Hotline: 0969.015.828</strong></p>
+        </div>
+        <div class="email-contact">
+          <div class="write to us" style="display: flex; margin-bottom: 20px">
+            <img src="./img/mail.png" style="height: 40px; width: 40px" />
+            <h2 style="margin-top: 10px; margin-left: 11px">Gửi Email</h2>
+          </div>
+          <p>Điền vào biểu mẫu bên cạnh và chúng tôi sẽ phản hồi trong 24h.</p>
+          <p>Email: cskh@onegear.vn</p>
+          <p>Email: hotro@onegear.vn</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="write">
+            <div class="name">
               <input
                 type="text"
                 id="name"
-                placeholder="Họ và tên"
-                class="form-input"
+                name="name"
+                placeholder="Tên của bạn *"
                 required
               />
             </div>
-            <div class="form-content">
+            <div class="email">
               <input
                 type="email"
                 id="email"
-                placeholder="Địa chỉ Email"
-                class="form-input"
+                name="email"
+                placeholder="Email của bạn *"
                 required
               />
             </div>
-            <div class="form-content form-pass">
+            <div class="phone">
               <input
-                type="password"
-                id="password"
-                placeholder="Mật khẩu"
-                class="form-input"
-                required
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Số điện thoại *"
               />
             </div>
-
-            <div class="form-content">
-              <button type="submit" class="form-btn">Đăng ký</button>
+            <div style="width: 100%; margin: 5px 10px">
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Nội dung tin nhắn"
+                style="height: 207px; width: 100%; padding: 10px"
+              ></textarea>
+              <button type="submit">Gửi Tin Nhắn</button>
             </div>
-
-            <div class="form-content text-center">
-              <span
-                >Bạn đã có tài khoản?
-                <a href="./login.html" class="form-sign-link"
-                  >Đăng nhập</a
-                ></span
-              >
-            </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-    </section>
+    </div>
+
     <footer class="footer">
       <div class="container footer-container">
         <div class="footer-item">
-          <a href="#" class="footer-logo">ONEGEAR</a>
+          <a href="index.html" class="footer-logo">ONEGEAR</a>
           <div class="footer-p">
-            Chúng tôi chuyên cung cấp gaming gear chính hãng, giá tốt, bảo hành
-            minh bạch và hỗ trợ khách hàng nhanh chóng.
+            Đăng ký nhận thông báo để nhận ưu đãi 10% cho đơn hàng đầu tiên của
+            bạn.
           </div>
         </div>
         <div class="footer-item">
           <h3 class="footer-title">Hỗ trợ</h3>
           <ul class="footer-list">
             <li class="footer-list-item">
-              Số 55 Giải Phóng,Đồng Tâm, Đống Đa, Hà Nội
+              Số 55 Giải Phóng, Đồng Tâm, Đống Đa, Hà Nội
             </li>
             <li class="footer-list-item">cskh@onegear.vn</li>
             <li class="footer-list-item">+84969015828</li>
@@ -148,11 +177,18 @@
         <div class="footer-item">
           <h3 class="footer-title">Tài khoản</h3>
           <ul class="footer-list">
-            <li class="footer-list-item">Tài khoản của tôi</li>
-            <li class="footer-list-item">Đăng nhập / Đăng ký</li>
-            <li class="footer-list-item">Giỏ hàng</li>
-            <li class="footer-list-item">Danh sách yêu thích</li>
-            <li class="footer-list-item">Cửa hàng</li>
+            <li class="footer-list-item">
+              <a href="account.html" style="color: white">Tài khoản của tôi</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="login.html" style="color: white">Đăng nhập / Đăng ký</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="cart.html" style="color: white">Giỏ hàng</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="wishlist.html" style="color: white">Yêu thích</a>
+            </li>
           </ul>
         </div>
         <div class="footer-item">
@@ -160,7 +196,7 @@
           <ul class="footer-list">
             <li class="footer-list-item">Chính sách bảo mật</li>
             <li class="footer-list-item">Điều khoản sử dụng</li>
-            <li class="footer-list-item">Câu hỏi thường gặp</li>
+            <li class="footer-list-item">FAQ</li>
             <li class="footer-list-item">Liên hệ</li>
           </ul>
         </div>
@@ -168,7 +204,7 @@
       <div class="footer-bottom">
         <div class="container footer-bottom-container">
           <div class="footer-copyright">
-            &#169; Copyright 2025 ONEGEAR. All right reserved
+            &#169; Copyright 2025 ONEGEAR. All rights reserved
           </div>
         </div>
       </div>
@@ -179,8 +215,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script/sign up.js"></script>
-    <script src="script/signup.js"></script>
-    <script src="script/auth_check.js"></script>
+    <script src="script/contact.js"></script>
   </body>
 </html>
