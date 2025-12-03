@@ -121,6 +121,7 @@ ul {
 }
 
 /* ==================== 3. HEADER & CAROUSEL ==================== */
+
 .header-container {
   width: 100%;
   display: flex;
@@ -142,13 +143,27 @@ ul {
 }
 
 .carousel {
-  width: 75%; /* Adjusted to fit alongside filter */
+  width: 100%; /* Adjusted to fit alongside filter */
+  object-fit: cover;
 }
 
 /* ==================== 4. BRAND GRID ==================== */
+
+.section .container{
+  position: relative;
+}
+
+.label_brands {
+  width: 100%;
+  font-size: 2.5rem;
+  position: absolute;
+  bottom: 105%;
+  left: 50%;
+}
+
 .brand-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 1.5rem;
   margin-bottom: 4rem;
 }

@@ -68,17 +68,20 @@ const tagsHtml = (product.tags || []).map(tag => `<span class="tag">${tag}</span
 // 1. Hàm lọc chính (Chạy khi bạn thay đổi bất kỳ ô select nào)
 function filterProducts() {
     // Lấy giá trị từ các ô input
+    const product_Type = document.getElementById('filter-type').value;
     const priceType = document.getElementById('filter-price').value;
     const brandType = document.getElementById('filter-brand').value;
     const connType  = document.getElementById('filter-connection').value;
     const ledType   = document.getElementById('filter-led').value;
     const keycapType = document.getElementById('filter-keycap').value;
     const sortType  = document.getElementById('sort-order').value;
-
+    const layoutType = document.getElementById('filter-layout').value
+    const purposeType = document.getElementById('filter-purpose').value
+    const sizeType = document.getElementById('filter-size').value
     // Bắt đầu lọc
     let filteredData = products.filter(item => {
         // Mặc định là giữ lại (true), nếu vi phạm điều kiện nào thì loại bỏ (false)
-        
+
         // --- Lọc GIÁ ---
         if (priceType === 'under-1' && item.price >= 1000000) return false;
         if (priceType === '1-3' && (item.price < 1000000 || item.price > 3000000)) return false;
@@ -88,13 +91,25 @@ function filterProducts() {
         if (brandType !== 'all' && item.brand.toLowerCase() !== brandType.toLowerCase()) return false;
 
         // --- Lọc KẾT NỐI ---
-        if (connType !== 'all' && item.connection !== connType) return false;
+        if (connType !== 'all' && item.connection.toLowerCase() !== connType.toLowerCase()) return false;
 
         // --- Lọc LED ---
-        if (ledType !== 'all' && item.led !== ledType) return false;
+        if (ledType !== 'all' && item.led.toLowerCase() !== ledType.toLowerCase()) return false;
 
         // --- Lọc KEYCAP ---
-        if (keycapType !== 'all' && item.keycap !== keycapType) return false;
+        if (keycapType !== 'all' && item.keycap.toLowerCase() !== keycapType.toLowerCase()) return false;
+
+        //--- Lọc Size ---
+        if(sizeType !== 'all' && item.sizeType.toLowerCase() !== sizeType.toLowerCase()) return false;
+
+        //--- Lọc Layout ---
+        if(layoutType !== 'all' && item.layoutType.toLowerCase() !== layoutType.toLowerCase()) return false;
+
+        // ---Lọc Purpose ---
+        if(purposeType !== 'all' && item.purposeType.toLowerCase() !== purposeType.toLowerCase()) return false;
+
+        // ---Lọc Type ---
+        if(product_Type !== 'all' && item.type.toLowerCase() !== product_Type.toLowerCase()) return false;
 
         return true; // Nếu qua được hết các cửa ải trên thì giữ lại
     });

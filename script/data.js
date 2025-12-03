@@ -1,5 +1,3 @@
-// script/data.js - KHO DỮ LIỆU SẢN PHẨM HOÀN CHỈNH (ĐÃ FIX ĐƯỜNG DẪN ẢNH)
-
 const dbProducts = [
   // ==================== BÀN PHÍM ====================
   {
@@ -8,7 +6,10 @@ const dbProducts = [
     image: "./img/keyboard/keyboard9.jpg", // Đã sửa thành keyboard9 theo file bạn gửi
     price: 990000,
     rating: 4.5, reviews: 10, isHot: true,
-    type: "Bàn phím", brand: "HyperWork", connection: "Wireless", led: "None", size: "75%", keycap: "PBT"
+    type: "Bàn phím", brand: "HyperWork", connection: "Wireless", led: "None", size: "75%", keycap: "PBT",
+    sizeType: "TKL",
+    layoutType: "ANSI",
+    purposeType: "Gaming"
   },
   {
     id: 102,
@@ -16,7 +17,10 @@ const dbProducts = [
     image: "./img/keyboard/keyboard2.jpg",
     price: 650000,
     rating: 4.2, reviews: 45, isHot: false,
-    type: "Bàn phím", brand: "E-Dra", connection: "Wired", led: "Rainbow", size: "75%", keycap: "ABS"
+    type: "Bàn phím", brand: "E-Dra", connection: "Wired", led: "Rainbow", size: "75%", keycap: "ABS",
+    sizeType: "Fullsize",
+    layoutType: "ISO",
+    purposeType: "Gaming"
   },
   {
     id: 103,
@@ -24,7 +28,10 @@ const dbProducts = [
     image: "./img/keyboard/keyboard3.jpg", // Lưu ý: Bạn chưa gửi ảnh keyboard3, hãy kiểm tra lại
     price: 450000,
     rating: 4.0, reviews: 20, isHot: false,
-    type: "Bàn phím", brand: "Philips", connection: "Wireless", led: "None", size: "Mini", keycap: "ABS"
+    type: "Bàn phím", brand: "Philips", connection: "Wireless", led: "None", size: "Mini", keycap: "ABS",
+    sizeType: "Mini",
+    layoutType: "ANSI",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 104,
@@ -32,7 +39,10 @@ const dbProducts = [
     image: "./img/keyboard/keyboard4.jpg",
     price: 1450000,
     rating: 4.9, reviews: 88, isHot: true,
-    type: "Bàn phím", brand: "Aula", connection: "Wireless", led: "RGB", size: "75%", keycap: "PBT"
+    type: "Bàn phím", brand: "Aula", connection: "Wireless", led: "RGB", size: "75%", keycap: "PBT",
+    sizeType: "TKL",
+    layoutType: "ANSI",
+    purposeType: "Gaming"
   },
   {
     id: 105,
@@ -40,7 +50,10 @@ const dbProducts = [
     image: "./img/keyboard/keyboard5.jpg",
     price: 1490000,
     rating: 5.0, reviews: 32, isHot: true,
-    type: "Bàn phím", brand: "Aula", connection: "Wireless", led: "RGB", size: "75%", keycap: "PBT"
+    type: "Bàn phím", brand: "Aula", connection: "Wireless", led: "RGB", size: "75%", keycap: "PBT",
+    sizeType: "TKL",
+    layoutType: "ANSI",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 106,
@@ -48,7 +61,10 @@ const dbProducts = [
     image: "./img/keyboard/keyboard6.jpg",
     price: 3200000,
     rating: 5.0, reviews: 15, isHot: true,
-    type: "Bàn phím", brand: "FL-Esports", connection: "Wireless", led: "RGB", size: "75%", keycap: "PBT"
+    type: "Bàn phím", brand: "FL-Esports", connection: "Wireless", led: "RGB", size: "75%", keycap: "PBT",
+    sizeType: "Fullsize",
+    layoutType: "ANSI",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 107,
@@ -56,7 +72,10 @@ const dbProducts = [
     image: "./img/keyboard/keyboard7.jpg",
     price: 790000,
     rating: 4.4, reviews: 60, isHot: false,
-    type: "Bàn phím", brand: "E-Dra", connection: "Wireless", led: "RGB", size: "Mini", keycap: "ABS"
+    type: "Bàn phím", brand: "E-Dra", connection: "Wireless", led: "RGB", size: "Mini", keycap: "ABS",
+    sizeType: "Mini",
+    layoutType: "ISO",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 108,
@@ -64,7 +83,10 @@ const dbProducts = [
     image: "./img/keyboard/keyboard8.jpg",
     price: 550000,
     rating: 4.3, reviews: 100, isHot: false,
-    type: "Bàn phím", brand: "Logitech", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS"
+    type: "Bàn phím", brand: "Logitech", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS",
+    sizeType: "Mini",
+    layoutType: "ISO",
+    purposeType: "Gaming"
   },
   {
     id: 109,
@@ -72,7 +94,10 @@ const dbProducts = [
     image: "./img/keyboard/keyboard9.jpg",
     price: 890000,
     rating: 4.6, reviews: 25, isHot: false,
-    type: "Bàn phím", brand: "Aula", connection: "Wireless", led: "Rainbow", size: "TKL", keycap: "ABS"
+    type: "Bàn phím", brand: "Aula", connection: "Wireless", led: "Rainbow", size: "TKL", keycap: "ABS",
+    sizeType: "Fullsize",
+    layoutType: "ISO",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 110,
@@ -80,7 +105,10 @@ const dbProducts = [
     image: "./img/keyboard/keyboard10.jpg",
     price: 1450000,
     rating: 4.9, reviews: 40, isHot: true,
-    type: "Bàn phím", brand: "Aula", connection: "Wireless", led: "RGB", size: "75%", keycap: "PBT"
+    type: "Bàn phím", brand: "Aula", connection: "Wireless", led: "RGB", size: "75%", keycap: "PBT",
+    sizeType: "Mini",
+    layoutType: "ISO",
+    purposeType: "Gaming"
   },
 
   // ==================== CHUỘT (MICE) ====================
@@ -90,7 +118,10 @@ const dbProducts = [
     image: "./img/mouse/mouse1.jpg",
     price: 1690000,
     rating: 4.8, reviews: 200, isHot: true,
-    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Lớn", keycap: "None"
+    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Lớn", keycap: "None",
+    sizeType: "Fullsize",
+    layoutType: "ANSI",
+    purposeType: "Gaming"
   },
   {
     id: 202,
@@ -98,7 +129,10 @@ const dbProducts = [
     image: "./img/mouse/mouse2.jpg",
     price: 890000,
     rating: 4.7, reviews: 500, isHot: true,
-    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Trung bình", keycap: "None"
+    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Trung bình", keycap: "None",
+    sizeType: "TKL",
+    layoutType: "ISO",
+    purposeType: "Gaming"
   },
   {
     id: 203,
@@ -106,7 +140,10 @@ const dbProducts = [
     image: "./img/mouse/mouse3.jpg",
     price: 450000,
     rating: 4.9, reviews: 1000, isHot: true,
-    type: "Chuột", brand: "Logitech", connection: "Wired", led: "RGB", size: "Nhỏ", keycap: "None"
+    type: "Chuột", brand: "Logitech", connection: "Wired", led: "RGB", size: "Nhỏ", keycap: "None",
+    sizeType: "Mini",
+    layoutType: "ANSI",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 204,
@@ -114,7 +151,10 @@ const dbProducts = [
     image: "./img/mouse/mouse4.jpg",
     price: 750000,
     rating: 4.6, reviews: 80, isHot: false,
-    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Trung bình", keycap: "None"
+    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Trung bình", keycap: "None",
+    sizeType: "Fullsize",
+    layoutType: "ISO",
+    purposeType: "Gaming"
   },
   {
     id: 205,
@@ -122,7 +162,10 @@ const dbProducts = [
     image: "./img/mouse/mouse5.jpg",
     price: 1990000,
     rating: 4.8, reviews: 60, isHot: true,
-    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Nhỏ", keycap: "None"
+    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Nhỏ", keycap: "None",
+    sizeType: "TKL",
+    layoutType: "ISO",
+    purposeType: "Gaming"
   },
   {
     id: 206,
@@ -130,7 +173,10 @@ const dbProducts = [
     image: "./img/mouse/mouse6.jpg",
     price: 390000,
     rating: 4.5, reviews: 300, isHot: false,
-    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Nhỏ", keycap: "None"
+    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Nhỏ", keycap: "None",
+    sizeType: "TKL",
+    layoutType: "ANSI",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 207,
@@ -138,7 +184,10 @@ const dbProducts = [
     image: "./img/mouse/mouse7.jpg",
     price: 750000,
     rating: 4.6, reviews: 45, isHot: false,
-    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Lớn", keycap: "None"
+    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Lớn", keycap: "None",
+    sizeType: "TKL",
+    layoutType: "ANSI",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 208,
@@ -146,7 +195,10 @@ const dbProducts = [
     image: "./img/mouse/mouse8.jpg",
     price: 3500000,
     rating: 5.0, reviews: 150, isHot: true,
-    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Trung bình", keycap: "None"
+    type: "Chuột", brand: "Logitech", connection: "Wireless", led: "None", size: "Trung bình", keycap: "None",
+    sizeType: "Mini",
+    layoutType: "ISO",
+    purposeType: "Gaming"
   },
   {
     id: 209,
@@ -154,7 +206,10 @@ const dbProducts = [
     image: "./img/mouse/mouse9.jpg",
     price: 990000,
     rating: 4.8, reviews: 600, isHot: true,
-    type: "Chuột", brand: "Logitech", connection: "Wired", led: "RGB", size: "Lớn", keycap: "None"
+    type: "Chuột", brand: "Logitech", connection: "Wired", led: "RGB", size: "Lớn", keycap: "None",
+    sizeType: "TKL",
+    layoutType: "ANSI",
+    purposeType: "Office" // Đã đổi
   },
 
   // ==================== COMBO (PHÍM + CHUỘT) ====================
@@ -164,7 +219,10 @@ const dbProducts = [
     image: "./img/combo/combo1.jpg",
     price: 550000,
     rating: 4.4, reviews: 120, isHot: true,
-    type: "Combo", brand: "Logitech", connection: "Wireless", led: "None", size: "Mini", keycap: "ABS"
+    type: "Combo", brand: "Logitech", connection: "Wireless", led: "None", size: "Mini", keycap: "ABS",
+    sizeType: "TKL",
+    layoutType: "ISO",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 302,
@@ -172,7 +230,10 @@ const dbProducts = [
     image: "./img/combo/combo2.jpg",
     price: 390000,
     rating: 4.2, reviews: 80, isHot: false,
-    type: "Combo", brand: "Rapoo", connection: "Wireless", led: "None", size: "TKL", keycap: "ABS"
+    type: "Combo", brand: "Rapoo", connection: "Wireless", led: "None", size: "TKL", keycap: "ABS",
+    sizeType: "TKL",
+    layoutType: "ISO",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 303,
@@ -180,7 +241,10 @@ const dbProducts = [
     image: "./img/combo/combo3.jpg",
     price: 1100000,
     rating: 4.7, reviews: 90, isHot: true,
-    type: "Combo", brand: "Logitech", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS"
+    type: "Combo", brand: "Logitech", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS",
+    sizeType: "Fullsize",
+    layoutType: "ANSI",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 304,
@@ -188,7 +252,10 @@ const dbProducts = [
     image: "./img/combo/combo4.jpg",
     price: 790000,
     rating: 4.5, reviews: 150, isHot: false,
-    type: "Combo", brand: "Logitech", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS"
+    type: "Combo", brand: "Logitech", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS",
+    sizeType: "Mini",
+    layoutType: "ISO",
+    purposeType: "Gaming"
   },
   {
     id: 305,
@@ -196,7 +263,10 @@ const dbProducts = [
     image: "./img/combo/combo5.jpg",
     price: 450000,
     rating: 4.3, reviews: 60, isHot: false,
-    type: "Combo", brand: "Aula", connection: "Wired", led: "Rainbow", size: "Fullsize", keycap: "ABS"
+    type: "Combo", brand: "Aula", connection: "Wired", led: "Rainbow", size: "Fullsize", keycap: "ABS",
+    sizeType: "Fullsize",
+    layoutType: "ANSI",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 306,
@@ -204,7 +274,10 @@ const dbProducts = [
     image: "./img/combo/combo6.jpg",
     price: 350000,
     rating: 4.4, reviews: 40, isHot: false,
-    type: "Combo", brand: "Dell", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS"
+    type: "Combo", brand: "Dell", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS",
+    sizeType: "Mini",
+    layoutType: "ISO",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 307,
@@ -212,7 +285,10 @@ const dbProducts = [
     image: "./img/combo/combo7.jpg",
     price: 550000,
     rating: 4.5, reviews: 30, isHot: false,
-    type: "Combo", brand: "Aula", connection: "Wired", led: "RGB", size: "TKL", keycap: "ABS"
+    type: "Combo", brand: "Aula", connection: "Wired", led: "RGB", size: "TKL", keycap: "ABS",
+    sizeType: "Fullsize",
+    layoutType: "ANSI",
+    purposeType: "Gaming"
   },
   {
     id: 308,
@@ -220,7 +296,10 @@ const dbProducts = [
     image: "./img/combo/combo8.jpg",
     price: 320000,
     rating: 4.6, reviews: 500, isHot: true,
-    type: "Combo", brand: "Logitech", connection: "Wired", led: "None", size: "Fullsize", keycap: "ABS"
+    type: "Combo", brand: "Logitech", connection: "Wired", led: "None", size: "Fullsize", keycap: "ABS",
+    sizeType: "TKL",
+    layoutType: "ANSI",
+    purposeType: "Gaming"
   },
   {
     id: 309,
@@ -228,7 +307,10 @@ const dbProducts = [
     image: "./img/combo/combo9.jpg",
     price: 590000,
     rating: 4.5, reviews: 220, isHot: false,
-    type: "Combo", brand: "Logitech", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS"
+    type: "Combo", brand: "Logitech", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS",
+    sizeType: "Mini",
+    layoutType: "ISO",
+    purposeType: "Office" // Đã đổi
   },
   {
     id: 310,
@@ -236,6 +318,9 @@ const dbProducts = [
     image: "./img/combo/combo10.jpg",
     price: 850000,
     rating: 4.7, reviews: 180, isHot: true,
-    type: "Combo", brand: "Logitech", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS"
+    type: "Combo", brand: "Logitech", connection: "Wireless", led: "None", size: "Fullsize", keycap: "ABS",
+    sizeType: "Fullsize",
+    layoutType: "ISO",
+    purposeType: "Gaming"
   }
 ];
